@@ -10,35 +10,6 @@ This repository contains a custom implementation of memory management functions 
 - **Custom `realloc` Implementation (`HmmRealloc`)**: Resizes an existing memory block.
 - **Debugging Support**: Includes a function to print the current state of the heap to help with debugging memory issues.
 
-## Usage
-
-You can use these functions similarly to how standard memory management functions are used in C. Here is a brief example of using these functions in a C program:
-
-```c
-#include "memory_management.h"
-
-int main() {
-    int *array = (int*)malloc(10 * sizeof(int));
-    if (array == NULL) {
-        printf("Memory allocation failed\n");
-        return 1;
-    }
-
-    for (int i = 0; i < 10; i++) {
-        array[i] = i;
-    }
-
-    int *new_array = realloc(array, 20 * sizeof(int));
-    if (new_array == NULL) {
-        free(array);
-        printf("Memory reallocation failed\n");
-        return 1;
-    }
-
-    free(new_array);
-    return 0;
-}
-
 Structure
   HMM.c: C source file for HMM functions.
   test.c: Test program that utilizes the HMM library.
