@@ -10,21 +10,21 @@ This repository contains a custom implementation of memory management functions 
 - **Custom `realloc` Implementation (`HmmRealloc`)**: Resizes an existing memory block.
 - **Debugging Support**: Includes a function to print the current state of the heap to help with debugging memory issues.
 
-**Custom Structure Implementation
+Structure
 
-  HMM.c: C source file for HMM functions.
+  `HMM.c`: C source file for HMM functions.
 
-  test.c: Test program that utilizes the HMM library.
+  `test.c`: Test program that utilizes the HMM library.
 
-**Custom Build Directories Implementation
+Build Directories
 
-  ./build/: Main directory for build files.
+  ./build/: `Main` directory for build files.
 
-  ./build/shared/: Directory for shared library build files.
+  ./build/shared/: Directory for `shared` library build files.
 
-  ./build/static/: Directory for static library build files.
+  ./build/static/: Directory for `static` library build files.
 
-**Custom General Setup Implementation
+General Setup
 
 First, create the build directory if it doesn't already exist:
 
@@ -32,7 +32,7 @@ mkdir -p ./build
 
 Shared Library
 
-**Custom Compile the HMM object file for shared library: Implementation
+Compile the HMM object file for shared library:
 
 gcc -c -fPIC -o ./build/shared/IHMM.o HMM.c
 
@@ -40,37 +40,37 @@ Create the shared library:
 
 gcc --shared -o ./build/shared/libHMM.so ./build/shared/IHMM.o
 
-**Custom Compile the test program using the shared library: Implementation
+Compile the test program using the shared library:
 
 gcc ./build/test.o ./build/shared/libHMM.so -o ./build/shared/test.out
 
-**Custom Static Library Implementation
+Static Library
 
 Compile the HMM object file for static library:
 
 gcc -c HMM.c -o ./build/static/HMM.o
 
-**Custom Create the static library: Implementation
+Create the static library:
 
 ar -r ./build/static/lib.a ./build/static/HMM.o
 
-**Custom Compile the test program using the static library:
+Compile the test program using the static library:
 
 gcc ./build/test.o ./build/static/lib.a -o ./build/static/test.out
 
-**Custom Compile the Test Program Implementation
+Compile the Test Program 
 
 To compile the test source file for use with either library configuration:
 
 gcc -c test.c -o ./build/test.o
 
-**Custom Clean Build Files Implementation
+Clean Build Files 
 
   To clean up all generated files and directories:
   
   rm -rf ./build
 
-**Custom Running the Test Program Implementation
+ Running the Test Program 
 
   For shared library:
   
@@ -82,6 +82,6 @@ gcc -c test.c -o ./build/test.o
   
   ./build/static/test.out
 
-**Custom Unset the LD_PRELOAD if it was set: Implementation
+Unset the LD_PRELOAD if it was set: 
 
 unset LD_PRELOAD
