@@ -10,13 +10,13 @@ This repository contains a custom implementation of memory management functions 
 - **Custom `realloc` Implementation (`HmmRealloc`)**: Resizes an existing memory block.
 - **Debugging Support**: Includes a function to print the current state of the heap to help with debugging memory issues.
 
-Structure
+**Custom Structure Implementation
 
   HMM.c: C source file for HMM functions.
 
   test.c: Test program that utilizes the HMM library.
 
-Build Directories
+**Custom Build Directories Implementation
 
   ./build/: Main directory for build files.
 
@@ -24,7 +24,7 @@ Build Directories
 
   ./build/static/: Directory for static library build files.
 
-General Setup
+**Custom General Setup Implementation
 
 First, create the build directory if it doesn't already exist:
 
@@ -32,7 +32,7 @@ mkdir -p ./build
 
 Shared Library
 
-Compile the HMM object file for shared library:
+**Custom Compile the HMM object file for shared library: Implementation
 
 gcc -c -fPIC -o ./build/shared/IHMM.o HMM.c
 
@@ -40,37 +40,37 @@ Create the shared library:
 
 gcc --shared -o ./build/shared/libHMM.so ./build/shared/IHMM.o
 
-Compile the test program using the shared library:
+**Custom Compile the test program using the shared library: Implementation
 
 gcc ./build/test.o ./build/shared/libHMM.so -o ./build/shared/test.out
 
-Static Library
+**Custom Static Library Implementation
 
 Compile the HMM object file for static library:
 
 gcc -c HMM.c -o ./build/static/HMM.o
 
-Create the static library:
+**Custom Create the static library: Implementation
 
 ar -r ./build/static/lib.a ./build/static/HMM.o
 
-Compile the test program using the static library:
+**Custom Compile the test program using the static library:
 
 gcc ./build/test.o ./build/static/lib.a -o ./build/static/test.out
 
-Compile the Test Program
+**Custom Compile the Test Program Implementation
 
 To compile the test source file for use with either library configuration:
 
 gcc -c test.c -o ./build/test.o
 
-Clean Build Files
+**Custom Clean Build Files Implementation
 
   To clean up all generated files and directories:
   
   rm -rf ./build
 
-Running the Test Program
+**Custom Running the Test Program Implementation
 
   For shared library:
   
@@ -82,6 +82,6 @@ Running the Test Program
   
   ./build/static/test.out
 
-Unset the LD_PRELOAD if it was set:
+**Custom Unset the LD_PRELOAD if it was set: Implementation
 
 unset LD_PRELOAD
