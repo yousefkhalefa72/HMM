@@ -279,7 +279,7 @@ void HmmFree(void *ptr)
     }
     
     // if the last block is free and large enough. 
-    
+    //       try 1
     // if(up_free)
     // {
     //     if((up_free->next == NULL)&&(up_free->size > mfmSize))
@@ -304,7 +304,7 @@ void HmmFree(void *ptr)
     //         down_down_free->size = mfmSize;
     //     }
     // }
-    // 
+    //         try 2
     // if(down_down_free->next == NULL) 
     // {
     //     if(down_down_free->size > mfmSize)
@@ -321,6 +321,7 @@ void HmmFree(void *ptr)
     //         down_free->size = mfmSize;
     //     }
     // }
+    //    passed
     if(down_down_free != NULL)
     {
         while(down_down_free->next != NULL)
